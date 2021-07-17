@@ -6,7 +6,7 @@ public class GravityAcceleration : MonoBehaviour
 {
     // 속도값 선언하고
     // 가속도만큼 더해진다
-    // 속도만큼 pos -
+    // 거리만큼 이동
     // t = 시간, g = 중력가속도
     // v = 속도, s = 이동거리,
     // 낙하 속도 v1 = v0 + gt
