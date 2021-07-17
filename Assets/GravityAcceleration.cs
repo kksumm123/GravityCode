@@ -54,9 +54,9 @@ public class GravityAcceleration : MonoBehaviour
     
     private void gravityAccelerationMove()
     {
-        gravityVelocity += gravityAcceleration * Time.deltaTime;
-
         s = gravityVelocity + (0.5f * gravityAcceleration * Mathf.Pow(Time.deltaTime, 2));
+
+        gravityVelocity += gravityAcceleration * Time.deltaTime;
 
         transform.Translate(new Vector3(0, -s * Time.deltaTime, 0), Space.World);
     }
