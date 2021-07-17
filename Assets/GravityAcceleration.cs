@@ -45,20 +45,23 @@ public class GravityAcceleration : MonoBehaviour
             Init();
     }
 
-    private bool IsGround()
+    bool IsGround()
     {
         ray = Physics2D.Raycast(
                     transform.position, Vector2.down, rayDistance, wallLayer);
         return ray.transform;
     }
-    
-    private void gravityAccelerationMove()
+
+    float t;
+    void gravityAccelerationMove()
     {
-        s = gravityVelocity + (0.5f * gravityAcceleration * Mathf.Pow(Time.deltaTime, 2));
+        t = Time.deltaTime;
 
-        gravityVelocity += gravityAcceleration * Time.deltaTime;
+        s = gravityVelocity + (0.5f * gravityAcceleration * Mathf.Pow(t, 2));
 
-        transform.Translate(new Vector3(0, -s * Time.deltaTime, 0), Space.World);
+        transform.Translate(new Vector3(0, -s * t, 0), Space.World);
+
+        gravityVelocity += gravityAcceleration * t;
     }
 
     private void OnDrawGizmos()
