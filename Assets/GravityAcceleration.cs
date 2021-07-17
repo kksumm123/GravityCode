@@ -30,6 +30,6 @@ public class GravityAcceleration : MonoBehaviour
         s = (gravityVelocity * Time.fixedDeltaTime)
             + (0.5f * gravityAcceleration * Mathf.Pow(Time.fixedDeltaTime, 2));
 
-        transform.Translate(new Vector3(0, -s, 0), Space.World);
+        transform.Translate(new Vector3(0, -s * Time.fixedDeltaTime, 0), Space.World);
     }
 }
