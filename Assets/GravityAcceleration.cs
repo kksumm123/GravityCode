@@ -40,13 +40,13 @@ public class GravityAcceleration : MonoBehaviour
     void Update()
     {
         if (IsGround() == false)
-            gravityAccelerationMove();
+            gravityAccelerationMove(); // ∂•ø° æ»¥Íæ“¿∏∏È
         else
-            Init();
+            Init(); //∂•ø° ¥Íæ“¿∏∏È
     }
 
     bool IsGround()
-    {
+    { // true = ∂•ø° ¥Í¿Ω, false = ∂•ø° æ»¥Í¿Ω
         ray = Physics2D.Raycast(
                     transform.position, Vector2.down, rayDistance, wallLayer);
         return ray.transform;
